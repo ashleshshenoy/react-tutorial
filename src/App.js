@@ -1,7 +1,8 @@
 import { Navbar, NavbarBrand } from 'reactstrap';
 import {Component} from 'react';
-import Menu from './components/menuComponent';
+import Main from './components/MainComponent';
 import { DISHES } from './shared/dishes';
+import { BrowserRouter } from 'react-router-dom';
 
 
 
@@ -15,14 +16,11 @@ class App extends Component {
 
   render() {
     return (
+      <BrowserRouter>
       <div className="App">
-        <Navbar dark color="primary">
-          <div className="container">
-            <NavbarBrand href="/">Ashlesh shenoy</NavbarBrand>
-          </div>
-        </Navbar>
-        <Menu dishes={this.state.dishes} />
+        <Main />
       </div>
+    </BrowserRouter>
     );
   }
 }
